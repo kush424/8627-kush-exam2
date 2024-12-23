@@ -1,22 +1,26 @@
-// WAP to find sum of all odd value from given 1D Array.
-
 #include <stdio.h>
 
+int main() {
+    int n, sum = 0;
 
-int sumOfOdd(int arr[], int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        if (arr[i] % 2 != 0) {
-            sum += arr[i];
+  
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];  
+    
+    printf("Enter %d elements: \n", n);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % 2 != 0) {  
+            sum += arr[i]; 
         }
     }
-    return sum;
-}
 
-int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; 
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int result = sumOfOdd(arr, size);
-    printf("The sum of all odd values in the array is: %d\n", result);
+    printf("Sum of all odd numbers in the array: %d\n", sum);
+
     return 0;
 }
